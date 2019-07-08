@@ -1,0 +1,990 @@
+x264: cpu capabilities: 
+x264_sps_read: sps:0x0 profile:88/21 poc:0 ref:2 2x2 crop:0-0-0-0
+x264_sps_read: pps:0x0 sps:0x0 CAVLC slice_groups=1 ref0:1 ref1:1 QP:26 QS:26 QC=0 DFC:1 CIP:0 RPC:0
+encoder/encoder.c:x264_encoder_open
+encoder/set.c:x264_sps_init
+encoder/set.c:x264_pps_init
+core/macroblock.c:x264_macroblocks_new
+encoder/encoder.c:x264_encoder_encode
+encoder/encoder.c:x264_slice_header_init
+encoder/../core/bs.h:bs_init
+encoder/encoder.c:x264_nal_start
+encoder/../core/bs.h:bs_align_0
+encoder/../core/bs.h:bs_pos
+encoder/set.c:x264_sps_write
+bs_write 8 , 88 
+bs_write 1 , 0 
+bs_write 1 , 0 
+bs_write 1 , 0 
+bs_write 5 , 0 
+bs_write 8 , 21 
+bs_write_ue 0 i_id
+bs_write 1 , 1 
+bs_write_ue 4 i_log2_max_frame_num
+bs_write 5 , 5 
+bs_write_ue 0 i_poc_type
+bs_write 1 , 1 
+bs_write_ue 4 i_log2_max_poc_lsb
+bs_write 5 , 5 
+bs_write_ue 2 i_num_ref_frames
+bs_write 3 , 3 
+bs_write 1 , 0 
+bs_write_ue 1 i_mb_width
+bs_write 3 , 2 
+bs_write_ue 1 i_mb_height
+bs_write 3 , 2 
+bs_write 1 , 1 
+bs_write 1 , 0 
+bs_write 1 , 0 
+bs_write 1 , 0 
+encoder/../core/bs.h:bs_rbsp_trailing
+bs_write 1 , 1 
+bs_write 5 , 0 
+encoder/encoder.c:x264_nal_end
+encoder/../core/bs.h:bs_align_0
+encoder/../core/bs.h:bs_pos
+encoder/encoder.c:x264_nal_start
+encoder/../core/bs.h:bs_align_0
+encoder/../core/bs.h:bs_pos
+encoder/set.c:x264_pps_write
+bs_write_ue 0 i_id
+bs_write 1 , 1 
+bs_write_ue 0 i_sps_id
+bs_write 1 , 1 
+bs_write 1 , 0 
+bs_write 1 , 0 
+bs_write_ue 0 i_num_slice_groups
+bs_write 1 , 1 
+bs_write_ue 0 i_num_ref_idx_l0_active
+bs_write 1 , 1 
+bs_write_ue 0 i_num_ref_idx_l1_active
+bs_write 1 , 1 
+bs_write 1 , 0 
+bs_write 2 , 0 
+bs_write_se 0 i_pic_init_qp
+bs_write_ue 0 i_pic_init_qp
+bs_write 1 , 1 
+bs_write_se 0 i_pic_init_qs
+bs_write_ue 0 i_pic_init_qs
+bs_write 1 , 1 
+bs_write_se 0 i_chroma_qp_index_offset
+bs_write_ue 0 i_chroma_qp_index_offset
+bs_write 1 , 1 
+bs_write 1 , 1 
+bs_write 1 , 0 
+bs_write 1 , 0 
+encoder/../core/bs.h:bs_rbsp_trailing
+bs_write 1 , 1 
+bs_write 7 , 0 
+encoder/encoder.c:x264_nal_end
+encoder/../core/bs.h:bs_align_0
+encoder/../core/bs.h:bs_pos
+encoder/encoder.c:x264_nal_start
+encoder/../core/bs.h:bs_align_0
+encoder/../core/bs.h:bs_pos
+encoder/encoder.c:x264_slice_header_write
+bs_write_ue 0 i_first_mb
+bs_write 1 , 1 
+bs_write_ue 7 i_type
+bs_write 7 , 8 
+bs_write_ue 0 i_pps_id
+bs_write 1 , 1 
+bs_write 8 , 0 
+bs_write_ue 0 i_idr_pic_id
+bs_write 1 , 1 
+bs_write 8 , 0 
+bs_write1 1 , 0 
+bs_write1 1 , 0 
+bs_write_se 0 i_qp_delta
+bs_write_ue 0 i_qp_delta
+bs_write 1 , 1 
+bs_write_ue 0 i_disable_deblocking_filter_idc
+bs_write 1 , 1 
+bs_write_se 0 i_alpha_c0_offset
+bs_write_ue 0 i_alpha_c0_offset
+bs_write 1 , 1 
+bs_write_se 0 i_beta_offset
+bs_write_ue 0 i_beta_offset
+bs_write 1 , 1 
+mb_xy 0 
+core/macroblock.c:x264_macroblock_context_load
+encoder/../core/bs.h:bs_size_ue
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/../core/bs.h:bs_size_ue
+encoder/macroblock.c:x264_macroblock_encode
+encoder/macroblock.c:x264_mb_encode_i16x16
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4_dc
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4_dc
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/macroblock.c:x264_mb_encode_8x8
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_2x2_dc
+encoder/macroblock.c:scan_zigzag_2x2_dc
+core/macroblock.c:x264_mb_dequant_2x2_dc
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_2x2_dc
+encoder/macroblock.c:scan_zigzag_2x2_dc
+core/macroblock.c:x264_mb_dequant_2x2_dc
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:x264_macroblock_write_cavlc
+bs_write_ue 3 i_mb_i_offset
+bs_write 5 , 4 
+bs_write_ue 0 i_chroma_pred_mode
+bs_write 1 , 1 
+bs_write_se 0 i_qp
+bs_write_ue 0 i_qp
+bs_write 1 , 1 
+encoder/macroblock.c:block_residual_write_cavlc
+core/macroblock.c:x264_mb_predict_non_zero_code
+encoder/macroblock.c:bs_write_vlc
+bs_write 1 , 1 
+mb_xy 1 
+core/macroblock.c:x264_macroblock_context_load
+encoder/../core/bs.h:bs_size_ue
+encoder/../core/bs.h:bs_size_ue
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/../core/bs.h:bs_size_ue
+encoder/../core/bs.h:bs_size_ue
+encoder/macroblock.c:x264_macroblock_encode
+encoder/macroblock.c:x264_mb_encode_i16x16
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4_dc
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4_dc
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/macroblock.c:x264_mb_encode_8x8
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_2x2_dc
+encoder/macroblock.c:scan_zigzag_2x2_dc
+core/macroblock.c:x264_mb_dequant_2x2_dc
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_2x2_dc
+encoder/macroblock.c:scan_zigzag_2x2_dc
+core/macroblock.c:x264_mb_dequant_2x2_dc
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:x264_macroblock_write_cavlc
+bs_write_ue 3 i_mb_i_offset
+bs_write 5 , 4 
+bs_write_ue 0 i_chroma_pred_mode
+bs_write 1 , 1 
+bs_write_se 0 i_qp
+bs_write_ue 0 i_qp
+bs_write 1 , 1 
+encoder/macroblock.c:block_residual_write_cavlc
+core/macroblock.c:x264_mb_predict_non_zero_code
+encoder/macroblock.c:bs_write_vlc
+bs_write 1 , 1 
+mb_xy 2 
+core/macroblock.c:x264_macroblock_context_load
+encoder/../core/bs.h:bs_size_ue
+encoder/../core/bs.h:bs_size_ue
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/../core/bs.h:bs_size_ue
+encoder/../core/bs.h:bs_size_ue
+encoder/macroblock.c:x264_macroblock_encode
+encoder/macroblock.c:x264_mb_encode_i16x16
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4_dc
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4_dc
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/macroblock.c:x264_mb_encode_8x8
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_2x2_dc
+encoder/macroblock.c:scan_zigzag_2x2_dc
+core/macroblock.c:x264_mb_dequant_2x2_dc
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_2x2_dc
+encoder/macroblock.c:scan_zigzag_2x2_dc
+core/macroblock.c:x264_mb_dequant_2x2_dc
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:x264_macroblock_write_cavlc
+bs_write_ue 1 i_mb_i_offset
+bs_write 3 , 2 
+bs_write_ue 0 i_chroma_pred_mode
+bs_write 1 , 1 
+bs_write_se 0 i_qp
+bs_write_ue 0 i_qp
+bs_write 1 , 1 
+encoder/macroblock.c:block_residual_write_cavlc
+core/macroblock.c:x264_mb_predict_non_zero_code
+encoder/macroblock.c:bs_write_vlc
+bs_write 1 , 1 
+mb_xy 3 
+core/macroblock.c:x264_macroblock_context_load
+encoder/../core/bs.h:bs_size_ue
+encoder/../core/bs.h:bs_size_ue
+encoder/../core/bs.h:bs_size_ue
+encoder/../core/bs.h:bs_size_ue
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_predict_intra4x4_mode
+encoder/macroblock.c:x264_mb_encode_i4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/../core/bs.h:bs_size_ue
+encoder/../core/bs.h:bs_size_ue
+encoder/../core/bs.h:bs_size_ue
+encoder/../core/bs.h:bs_size_ue
+encoder/macroblock.c:x264_macroblock_encode
+encoder/macroblock.c:x264_mb_encode_i16x16
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:quant_4x4_dc
+encoder/macroblock.c:scan_zigzag_4x4full
+core/macroblock.c:x264_mb_dequant_4x4_dc
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/macroblock.c:x264_mb_encode_8x8
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encodeframe=   0 NAL=3 Slice:I Poc:0   I4x4:0     I16x16:4     P:0     SKIP:0   size=8 bytes PSNR Y:-1.00 U:-1.00 V:-1.00
+x264: analyse=54(1ms) encode=40(0ms) write=2(0ms) filter=3(0ms)
+encoded 1 frames 373.831776fps 6 kb/s
+r/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_2x2_dc
+encoder/macroblock.c:scan_zigzag_2x2_dc
+core/macroblock.c:x264_mb_dequant_2x2_dc
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_4x4
+encoder/macroblock.c:scan_zigzag_4x4
+encoder/macroblock.c:x264_mb_decimate_score
+encoder/macroblock.c:quant_2x2_dc
+encoder/macroblock.c:scan_zigzag_2x2_dc
+core/macroblock.c:x264_mb_dequant_2x2_dc
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+core/macroblock.c:x264_mb_dequant_4x4
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:array_non_zero_count
+encoder/macroblock.c:x264_macroblock_write_cavlc
+bs_write_ue 1 i_mb_i_offset
+bs_write 3 , 2 
+bs_write_ue 0 i_chroma_pred_mode
+bs_write 1 , 1 
+bs_write_se 0 i_qp
+bs_write_ue 0 i_qp
+bs_write 1 , 1 
+encoder/macroblock.c:block_residual_write_cavlc
+core/macroblock.c:x264_mb_predict_non_zero_code
+encoder/macroblock.c:bs_write_vlc
+bs_write 1 , 1 
+encoder/../core/bs.h:bs_rbsp_trailing
+bs_write 1 , 1 
+bs_write 3 , 0 
+encoder/encoder.c:x264_nal_end
+encoder/../core/bs.h:bs_align_0
+encoder/../core/bs.h:bs_pos
+encoder/encoder.c:x264_psnr
+encoder/encoder.c:x264_psnr
+encoder/encoder.c:x264_psnr
+encoder/encoder.c:x264_nal_encode
+encoder/encoder.c:x264_nal_encode
+encoder/encoder.c:x264_nal_encode
+encoder/encoder.c:x264_encoder_close

@@ -379,7 +379,7 @@ static int x264_slice_header_decode(x264_t *h, bs_t *s, x264_nal_t *nal) {LOG_CA
         if (nal->i_type == NAL_SLICE_IDR)
         {
             h->i_frame_offset = 0;
-            h->i_poc = 0;
+            h->i_poc = 0;//https://www.vcodex.com/h264avc-picture-management/
         } else
         {
             if (h->sh.i_frame_num < h->i_frame_num)

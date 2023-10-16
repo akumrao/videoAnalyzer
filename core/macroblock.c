@@ -814,15 +814,18 @@ void x264_macroblock_context_load(x264_t *h, x264_macroblock_t *mb, x264_mb_cont
     context->i_##dst[2] = (src)->i_stride[2]
 
     LOAD_PTR(img, h->picture);
-    LOAD_PTR(fdec, h->fdec);
+    LOAD_PTR(fdec, h->fdec);  //     /* frame being reconstructed */  x264_frame_t      *fdec;
+    
     for (i = 0; i < h->i_ref0; i++)
     {
         LOAD_PTR(fref0[i], h->fref0[i]);
     }
+    
     for (i = 0; i < h->i_ref1; i++)
     {
         LOAD_PTR(fref1[i], h->fref1[i]);
     }
+    
 #undef LOAD_PTR
 
     for (i = 0; i < 4; i++)
@@ -831,13 +834,13 @@ void x264_macroblock_context_load(x264_t *h, x264_macroblock_t *mb, x264_mb_cont
         context->block[block_idx_xy[0][i]].mba = a;
         context->block[block_idx_xy[0][i]].bka = a ? &a->block[block_idx_xy[3][i]] : NULL;
         
-        myPrintf("context->block (%d%d -> %d%d), left src= %d , dest=%d \n", 3,i,0,i, block_idx_xy[3][i], block_idx_xy[0][i]  );
+        myPrintf("A context->block (%d%d -> %d%d), left src= %d , dest=%d \n", 3,i,0,i, block_idx_xy[3][i], block_idx_xy[0][i]  );
 
         /* up */
         context->block[block_idx_xy[i][0]].mbb = b;
         context->block[block_idx_xy[i][0]].bkb = b ? &b->block[block_idx_xy[i][3]] : NULL;
         
-        myPrintf("context->block (%d%d -> %d%d), up src= %d , dest=%d \n",i,3,i,0, block_idx_xy[i][3], block_idx_xy[i][0]  );
+        myPrintf("B context->block (%d%d -> %d%d), up src= %d , dest=%d \n",i,3,i,0, block_idx_xy[i][3], block_idx_xy[i][0]  );
 
         /* rest */
         for (j = 1; j < 4; j++)
@@ -845,12 +848,12 @@ void x264_macroblock_context_load(x264_t *h, x264_macroblock_t *mb, x264_mb_cont
             context->block[block_idx_xy[j][i]].mba = mb;
             context->block[block_idx_xy[j][i]].bka = &mb->block[block_idx_xy[j - 1][i]];
             
-            myPrintf("context->block (%d%d -> %d%d), rest src= %d , dest=%d \n",j-1,i,j,i, block_idx_xy[j - 1][i], block_idx_xy[j][i]  );
+            myPrintf("A context->block (%d%d -> %d%d), rest src= %d , dest=%d \n",j-1,i,j,i, block_idx_xy[j - 1][i], block_idx_xy[j][i]  );
 
             context->block[block_idx_xy[i][j]].mbb = mb;
             context->block[block_idx_xy[i][j]].bkb = &mb->block[block_idx_xy[i][j - 1]];
             
-            myPrintf("context->block (%d%d -> %d%d), rest src= %d , dest=%d \n", i,j-1, j,i, block_idx_xy[i][j - 1], block_idx_xy[j][i]  );
+            myPrintf("B context->block (%d%d -> %d%d), rest src= %d , dest=%d \n", i,j-1, j,i, block_idx_xy[i][j - 1], block_idx_xy[j][i]  );
         }
     }
 
@@ -868,18 +871,18 @@ void x264_macroblock_context_load(x264_t *h, x264_macroblock_t *mb, x264_mb_cont
             /* left */
             context->block[16 + 4 * ch + block_idx_xy[0][i]].mba = a;
             context->block[16 + 4 * ch + block_idx_xy[0][i]].bka = a ? &a->block[16 + 4 * ch + block_idx_xy[1][i]] : NULL;
-            myPrintf("context->block (%d%d -> %d%d), left src= %d , dest=%d \n", 1,i,0,i,  16 + 4 * ch + block_idx_xy[1][i], 16 + 4 * ch + block_idx_xy[0][i]  );
+            myPrintf("A context->block (%d%d -> %d%d), left src= %d , dest=%d \n", 1,i,0,i,  16 + 4 * ch + block_idx_xy[1][i], 16 + 4 * ch + block_idx_xy[0][i]  );
             /* up */
             context->block[16 + 4 * ch + block_idx_xy[i][0]].mbb = b;
             context->block[16 + 4 * ch + block_idx_xy[i][0]].bkb = b ? &b->block[16 + 4 * ch + block_idx_xy[i][1]] : NULL;
-            myPrintf("context->block (%d%d -> %d%d), up src= %d , dest=%d \n", i,1,i,0, 16 + 4 * ch + block_idx_xy[i][1], 16 + 4 * ch + block_idx_xy[i][0] );
+            myPrintf("B context->block (%d%d -> %d%d), up src= %d , dest=%d \n", i,1,i,0, 16 + 4 * ch + block_idx_xy[i][1], 16 + 4 * ch + block_idx_xy[i][0] );
             /* rest */
             context->block[16 + 4 * ch + block_idx_xy[1][i]].mba = mb;
             context->block[16 + 4 * ch + block_idx_xy[1][i]].bka = &mb->block[16 + 4 * ch + block_idx_xy[0][i]];
-            myPrintf("context->block (%d%d -> %d%d), rest src= %d , dest=%d \n", 0,i,1,i, 16 + 4 * ch + block_idx_xy[0][i], 16 + 4 * ch + block_idx_xy[1][i] );
+            myPrintf("A context->block (%d%d -> %d%d), rest src= %d , dest=%d \n", 0,i,1,i, 16 + 4 * ch + block_idx_xy[0][i], 16 + 4 * ch + block_idx_xy[1][i] );
             context->block[16 + 4 * ch + block_idx_xy[i][1]].mbb = mb;
             context->block[16 + 4 * ch + block_idx_xy[i][1]].bkb = &mb->block[16 + 4 * ch + block_idx_xy[i][0]];
-            myPrintf("context->block (%d%d -> %d%d), rest src= %d , dest=%d \n", i,0,i,1, 16 + 4 * ch + block_idx_xy[i][0], 16 + 4 * ch + block_idx_xy[i][1]  );
+            myPrintf("B context->block (%d%d -> %d%d), rest src= %d , dest=%d \n", i,0,i,1, 16 + 4 * ch + block_idx_xy[i][0], 16 + 4 * ch + block_idx_xy[i][1]  );
         }
         
         

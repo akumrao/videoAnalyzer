@@ -209,6 +209,13 @@ typedef struct
 } x264_mb_analysis_t;
 
 
+//* gives equation lambda_mode=0.85*pow(2,(qp-12)/3) and lambda_motion=pow(lambda_mode,0.5),it is different from x264
+/* So for the mode decision, if you're using RD throughout you would fully encode the block using motion vectors (MVs) corresponding to each partition,
+ * calculate the sum of squared differences (SSD), run it through the entropy coder to get the bits used to code using that partition arrangement.
+ * Then you calculate the rate distortion via the equation RD = SSD + bits*lambda. It should be clear that we wish to minimise this value.
+ * The lambda values are looked up from the tables aforementioned.
+ * I think the values in the tables have been adjusted slightly to perform best with x264.
+ */
 
 static const int i_qp0_cost_table[52] = {  
    1, 1, 1, 1, 1, 1, 1, 1,  /*  0-7 */  

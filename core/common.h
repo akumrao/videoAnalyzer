@@ -162,7 +162,51 @@ struct x264_t
     /* macroblock status (for current frame) */
     x264_macroblock_t *mb;
 
-    /* frames used for reference */
+    /* frames used for reference 
+
+
+
+// This structure involves frame management in the X264 encoding process. It is very important to understand the theoretical significance of the variables in this structure in the encoding standard x264_frame_t *current[X264_BFRAME_MAX* 4 + 3];  
+        The frame type has been determined , The frame to be encoded, each GOP before encoding, and the type of each frame has been determined before encoding. When encoding, a frame of data is taken from here.  
+        x264_frame_t *next[X264_BFRAME_MAX* 4 + 3 ]; // The frames to be encoded whose frame type has not yet been determined. When determined, the frames in this array will be transferred to the current array. x264_frame_t * unused 
+        [ X264_BFRAME_MAX * 4 + _ _ _ space, improve efficiency // For adaptive B decision
+        
+        x264_frame_t * last_nonb;
+
+        //frames used for reference + sentinels 
+        x264_frame_t *reference[ 16 + 2 ]; // Reference frame queue, note that reference frames are all reconstructed frames
+
+        int i_last_idr;  The frame number of the last refreshed key frame, combined with the previous i_frame, can be used to calculate the POC 
+
+        int i_input;     Number of input frames already accepted // i_input in the frames structure indicates the (playback order) serial number of the currently input frame.
+
+        int i_max_dpb;  * Maximum number of allocated decoded image buffers (DPB)  
+        int i_max_ref0; // Maximum number of forward reference frames 
+        int i_max_ref1; // Maximum number of backward reference frames 
+        int i_delay;      Number of frames buffered for B reordering 
+        // i_delay is set to the frame buffer delay determined by the number of B frames (number of threads). In the case of multi-threading, it is i_delay = i_bframe + i_threads - 1.
+        // To determine whether the B frame buffer filling is sufficient, the condition is judged: h->frames.i_input <= h->frames.i_delay + 1 - h->param.i_threads. 
+        int b_have_lowres;    Whether 1/2 resolution luma planes are being used 
+        int b_have_sub8x8_esa;
+    } frames; // Structure that indicates and controls the frame encoding process
+
+    current frame being encoded 
+    x264_frame_t     *fenc; // Point to the current encoded frame
+
+     //frame being reconstructed 
+    x264_frame_t     *fdec; // Points to the current reconstructed frame. The frame number of the reconstructed frame is 1 smaller than the frame number of the current encoded frame.
+
+   // references lists 
+    int              i_ref0; // Number of forward reference frames 
+    x264_frame_t *fref0[ 16 + 3 ];     // Array to store forward reference frames (note that the reference frames are all reconstructed frames) 
+    int              i_ref1; // Number of backward reference frames 
+    x264_frame_t *fref1[ 16 + 3 ];      // Array to store backward reference frames 
+    int              b_ref_reorder[ 2 ];
+    */
+
+    
+    
+
     x264_frame_t      *freference[16+1];  /* all references frames plus current */
     int               i_ref0;
     x264_frame_t      *fref0[16];       /* ref list 0 */

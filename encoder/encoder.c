@@ -765,8 +765,11 @@ int x264_encoder_encode(x264_t *h,
         h->sh.i_num_ref_idx_l1_active = h->i_ref1 <= 0 ? 1 : h->i_ref1;
     }
 
-    if (h->sps->i_poc_type == 0)
+    /*Then set i_poc_type to 0. The POC type specifies the encoding method of POC. The POC identifies the playback order of the image. Since H.264 uses B frames, the decoding order of images is not necessarily equal to the playback order, but they have a certain mapping relationship. The POC type can be calculated from Frame_num through the mapping relationship, or it can simply be transmitted to the decoder through display transmission by the encoder. There are three solutions for the POC type.*/
+    if (h->sps->i_poc_type == 0) 
     {
+        //    int i_poc_lsb; /* decoding only */    // int i_log2_max_poc_lsb; //Indicates the max value of the variable i_poc_lsb
+
         h->sh.i_poc_lsb = h->fdec->i_poc & ((1 << h->sps->i_log2_max_poc_lsb) - 1);
         h->sh.i_delta_poc_bottom = 0; /* XXX won't work for field */
     } else if (h->sps->i_poc_type == 1)
@@ -774,7 +777,7 @@ int x264_encoder_encode(x264_t *h,
         /* FIXME TODO FIXME */
     } else
     {
-        /* Nothing to do ? */
+        /* Nothing to do ? */  //error 
     }
 
     /* global qp */

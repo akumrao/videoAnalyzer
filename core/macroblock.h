@@ -20,6 +20,88 @@ enum macroblock_position_e
 /* XXX mb_type isn't the one written in the bitstream -> only internal usage */
 #define IS_INTRA(type) ( (type) == I_4x4 || (type) == I_16x16 )
 #define IS_SKIP(type)  ( (type) == P_SKIP || (type) == B_SKIP )
+
+/*
+
+Intra  4x4 : useful for a MB with significant detail
+Intra 16x16 : good for coding very smooth areas(Intra  8x8 chroma: similar to intra 16x16)
+I_PCM: no prediction or transform
+
+ * 
+ * 
+ * x264_macroblock_encode overview
+This function is mainly used in x264_slice_write()function calls. It mainly completes the transformation and quantization part in the encoder. This function mainly encapsulates the x264_macroblock_encode_internal()function. It includes the following steps:
+
+x264_macroblock_encode
+1
+2
+3
+4
+5
+6
+7
+void x264_macroblock_encode(x264_t *h)
+{
+    if(CHROMA444)
+        x264_macroblock_encode_internal(h, 3, 0);
+    else
+        x264_macroblock_encode_internal(h, 1, 1);
+}
+If the macroblock type is PCM type, the reconstructed frame data is stored directly.
+If the macroblock type is Skip type, call x264_macroblock_encode_skip()the encoding Skip type macroblock, including P_SKIPand B_SKIPtypes.
+If the macroblock type is I_16x16, call x264_mb_encode_i16x16()the encoding Intra 16x16 type macroblock. In addition to DCT transformation, this function also performs Hadamard transformation on the DC coefficients of 16 small blocks.
+If the macroblock type is I_4x4, call x264_mb_encode_i4x4()encoding macroblocks of type Intra 4x4.
+Inter-frame macroblock encoding, this part is not completed by a separate function, but is written x264_macroblock_encode_internalinside the function.
+Call x264_mb_encode_chroma()the function to encode the colorimetric card.
+I_PCM encoding mode
+I_PCM is an intra-coding mode in which the encoder directly transmits the pixel values ​​of the image without prediction and transformation. In some special cases, especially when the image content is irregular or the quantization parameter is very low, this mode is more efficient than the conventional operation (intra prediction-transform-quantization-coding).
+
+I_PCM mode is used for the following purposes:
+
+Allows the encoder to accurately represent pixel values.
+Provides accuracy in representing irregular image content without incurring significant data volume increases.
+Strictly limit the number of macroblock decoding bits without reducing coding efficiency.
+For encoding of I_PCM type, the implementation code is as follows:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+...
+if(h->mb.i_type == I_PCM)
+{
+    //if PCM is chosen, we need to store reconstructed frame data
+    for(int p = 0; p < plane_count; p++)
+    {
+        h->mc.copy[PIXEL_16x16](h->mb.pic.p_fdec[p], FDEC_STRIDE, h->mb.pic.p_fenc[p], FENC_STRIDE, 16);
+    }
+    if(chroma)
+    {
+        int height = 16 >> CHROMA_V_SHIFT;
+        h->mc.copy[PIXEL_8x8](h->mb.pic.p_fdec[1], FDEC_STRIDE, h->mb.pic.p_fenc[1], FENC_STRIDE, height);
+        h->mc.copy[PIXEL_8x8](h->mb.pic.p_fdec[2], FDEC_STRIDE, h->mb.pic.p_fenc[2], FENC_STRIDE, height);
+    }
+    return;
+}
+...
+P_Skip mode and B_Skip mode encoding
+P_Skip type macro block: COPY macro block, no pixel residual, no motion vector residual (MVD). Directly use the pixel prediction value obtained by predicting MV. Pixel reconstruction value = pixel prediction value.
+B_Skip type macroblock: no pixel residual, no motion vector residual (MVD). During decoding, after calculating the forward and backward MVs through the Direct prediction mode (time or space), the forward and backward MVs are directly used to obtain the pixel prediction value. Pixel reconstruction value = pixel prediction value.
+
+*/
 enum mb_class_e
 {
     I_4x4           = 0,

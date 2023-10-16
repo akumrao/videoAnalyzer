@@ -88,7 +88,7 @@ x264_picture_t *x264_picture_new( x264_t * );
  *      destroy a x264_picture_t */
 void            x264_picture_delete( x264_picture_t * );
 
-
+// arvind IDR (Instantaneous Decoder Refresh)
 /****************************************************************************
  * NAL structure and functions:
  The coded data that makes up a slice is placed in three separate Data Partitions (A, B and C), each containing a subset of the coded slice. Partition A contains the slice header and header data for each macroblock in the slice, Partition B contains coded residual data for Intra and SI slice macroblocks and Partition C contains coded residual data for inter coded macroblocks (forward and bi-directional). Each Partition can be placed in a separate NAL unit and may therefore be transported separately.
@@ -103,18 +103,18 @@ enum nal_unit_type_e
     NAL_SLICE_DPA   = 2,
     NAL_SLICE_DPB   = 3,
     NAL_SLICE_DPC   = 4,
-    NAL_SLICE_IDR   = 5,    /* ref_idc != 0 */
+    NAL_SLICE_IDR   = 5,    /* ref_idc != 0 */// 3  for slice i and p 1
     NAL_SEI         = 6,    /* ref_idc == 0 */
-    NAL_SPS         = 7,
-    NAL_PPS         = 8
-    /* ref_idc == 0 for 6,9,10,11,12 */
+    NAL_SPS         = 7,     /* ref_idc == 3 */  // importand need to keep it for refrence 
+    NAL_PPS         = 8      /* ref_idc == 3 */
+    /* ref_idc == 0 for 6,9,10,11,12 */  // not important no need to keep it for reference
 };
 enum nal_priority_e
 {
-    NAL_PRIORITY_DISPOSABLE = 0,
-    NAL_PRIORITY_LOW        = 1,
-    NAL_PRIORITY_HIGH       = 2,
-    NAL_PRIORITY_HIGHEST    = 3,
+    NAL_PRIORITY_DISPOSABLE = 0,  
+    NAL_PRIORITY_LOW        = 1,  
+    NAL_PRIORITY_HIGH       = 2, // slice i and pi
+    NAL_PRIORITY_HIGHEST    = 3, // IDR  sps and pps 
 };
 
 typedef struct

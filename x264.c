@@ -1,7 +1,39 @@
 
 /*****************************************************************************
  * x264: h264 encoder/decoder testing program.
+ * https://studylib.net/doc/5702305/fast-mode-decision-in-h264-avc-video-codec
+ * http://lazybing.github.io/blog/2017/11/13/x264-macroblock-analyse/
+ * 
+ * https://zhuanlan.zhihu.com/p/640693117
+ * 
+ * http://wmnmtm.blog.163.com/blog/static/382457142011885411173/
+ * 
+ * 
+https://huyunf.github.io/blogs/2017/11/20/x264_encoder_open/
+ * 
+ * https://github.com/cancan101/h.264-cuda/tree/master/encoder/pyramid
+ * 
+ * https://github.com/davidstutz/graph-based-image-segmentation/blob/master/lib/graph_segmentation.cpp
+ * https://github.com/the-other-mariana/image-processing-algorithms/blob/master/006-camera/camera.cpp
+ * https://github.com/cb1711/Image-Segmentation/blob/master/kmeans.cpp
+ * ffmpeg -i video.mp4 -c:v rawvideo -pix_fmt yuv420p out.yuv
+ * 
+ * 
+ * https://www.slideshare.net/vcodex/introduction-to-h264-advanced-video-compression
+ * 
+ * 
+ * 
+ * https://www.youtube.com/watch?v=wYZzpE1pPn0  Feature Extraction Methods for the classification of images
 
+ * https://www.youtube.com/watch?v=fxfS0vSAsTA  fft vs wavelet    wavelet scattering transform Wavelets-based Feature Extraction
+ * 
+ * 
+ * 
+ * https://www.youtube.com/watch?v=AYzWnCHnfSc    /Euler apply thining algorithm to get humnoid structure
+
+ * 
+ * out.yuv 1280x720  -o final.264
+ * 
  *****************************************************************************/
 
 #include <stdlib.h>
@@ -402,6 +434,11 @@ int main( int argc, char **argv )
 
             int         i;
 
+           /* i420  =   y = w*h
+                      u = w*h/4
+                      v = w*h/4  
+            */
+            
             //fillByte(pic->plane[0],  param.i_width , param.i_height);
             ///* read a frame
             if( fread( pic->plane[0], 1, param.i_width * param.i_height, fyuv ) <= 0 ||
@@ -411,7 +448,7 @@ int main( int argc, char **argv )
                 break;
             }
             
-            if(i_frame == 2 ) break; //arvind
+           // if(i_frame == 16 ) break; //arvind
             
             if( x264_encoder_encode( h, &nal, &i_nal, pic ) < 0 )
             {
